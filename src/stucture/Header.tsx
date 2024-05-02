@@ -27,7 +27,7 @@ export const Header = () => {
                     <h1 className="text-white font-bold text-2xl p-3">Dev Blog</h1>
                     <div>
                         <Link to={`/update/password/${auth?.user?.id}`}>
-                            <button className="bg-black p-3 border border-white rounded-md font-bold hover:opacity-90 mx-4">Resetar Senha</button>
+                            <button className="bg-black p-3 border border-white rounded-md font-bold hover:opacity-90 mx-4">Nova Senha</button>
                         </Link> 
                         <button className="bg-black p-3 border border-white rounded-md font-bold hover:opacity-90 mx-4" onClick={handleLogout}>Logout</button>
                     </div>

@@ -8,7 +8,7 @@ import { AuthContext, AuthContextType } from "../contexts/Auth/AuthContext";
 export const UpdatePost = () => {
     const [title, setTitle] = useState('');
     const [categories, setCategories] = useState<Category[]>([]);
-    const [selectCategory, setSelectCategory] = useState('Livros');
+    const [selectCategory, setSelectCategory] = useState('');
     const [publication_date, setPublicationDate] = useState('');
     const [content, setContent] = useState('');
     const [image, setImage] = useState('');

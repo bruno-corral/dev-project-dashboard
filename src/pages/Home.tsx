@@ -54,6 +54,17 @@ export const Home = () => {
         }
     }
 
+    // const handleDownloadCsv = async () => {
+    //     try {
+    //         const response = await api.downloadCsv(auth.user?.id);
+    //         alert(response.message);
+    //         console.log(response.message);
+    //     } catch (error) {
+    //         console.error(error);
+    //         throw error;
+    //     }
+    // }
+
     useEffect(() => {
         getPostByUser();
     }, []);
@@ -63,9 +74,12 @@ export const Home = () => {
             <div className="flex flex-1 justify-between">
                 <Title />
                 <SearchBar getPost={getPostByUser} />
-                <Link to={'/post/create'}>
-                    <button className="bg-black p-3 border border-white rounded-md font-bold hover:opacity-90">Novo Post</button>
-                </Link>
+                <div>
+                    {/* <button className="bg-black p-3 border border-white rounded-md font-bold hover:opacity-90 mr-3" onClick={() => handleDownloadCsv()}>Baixar Relatório</button> */}
+                    <Link to={'/post/create'}>
+                        <button className="bg-black p-3 border border-white rounded-md font-bold hover:opacity-90">Novo Post</button>
+                    </Link>
+                </div>
             </div>
 
             {loading &&
@@ -79,15 +93,15 @@ export const Home = () => {
             {posts.length > 0 ? (
                 posts.map(item => 
                     <div key={item.id} className="inline-block">
-                    <div className="border border-black py-4 rounded-md px-3 m-4">
-                        <h1 className="text-black font-bold text-3xl p-3">{item.title}</h1>
-                        <p className="text-black font-bold p-3">Publicado - {item.publication_date.split('-').reverse().join('/')}</p>
-                        <div>
-                            <Link to={`/post/update/${item.id}`}><button className="bg-blue-500 p-3 rounded-md font-bold hover:opacity-90 m-4 text-white">Editar</button></Link>
-                            <button className="bg-red-500 p-3 rounded-md font-bold hover:opacity-90 m-4 text-white" onClick={() => handleDeletePost(item.id)}>Deletar</button>
+                        <div className="border border-black py-4 rounded-md px-3 m-4">
+                            <h1 className="text-black font-bold text-3xl p-3">{item.title}</h1>
+                            <p className="text-black font-bold p-3">Publicado - {item.publication_date.split('-').reverse().join('/')}</p>
+                            <div>
+                                <Link to={`/post/update/${item.id}`}><button className="bg-blue-500 p-3 rounded-md font-bold hover:opacity-90 m-4 text-white">Editar</button></Link>
+                                <button className="bg-red-500 p-3 rounded-md font-bold hover:opacity-90 m-4 text-white" onClick={() => handleDeletePost(item.id)}>Deletar</button>
+                            </div>
                         </div>
                     </div>
-                </div>
                 )
             ) : (
                 <p className="text-2xl text-black text-center font-bold">Não existem posts cadastrados!</p>

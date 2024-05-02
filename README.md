@@ -1,30 +1,24 @@
-# React + TypeScript + Vite
+# Sobre a Aplicação
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Utilização de ReactJS + Typescript para criação de uma interface, segura e autenticada;
+- Utiliza-se Axios para fazer requisições para a API;
+- Estilização com Tailwind CSS;
+- Aplicação responsiva;
+- Tela de login de usuário;
+- Tela de cadastro usuário;
+- Utiliza-se ContextAPI para armazenar dados do usuário e lidar com login/logoff do usuário;
+- Tela da Home que lista os Posts do usuário;
+- Usuários administradores consegue ver todos os Posts de todos os usuários;
+- Usuários não administradores vê somente os seus Posts;
+- Tendo na Home um campo para busca pelo Título do Post;
+- Tela de editar senha do usuário.
 
-Currently, two official plugins are available:
+________________________
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Como executar a aplicação
 
-## Expanding the ESLint configuration
+1.  Execute no terminal na raiz do projeto o comando: `npm install` para instalar todas as dependências;
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2.  Em seguida, para iniciar a aplicação: `npm run dev`;
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3.  Para acessar a aplicação use a url: `http://127.0.0.1:5173/`

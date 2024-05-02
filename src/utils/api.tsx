@@ -44,23 +44,14 @@ export const api = {
         }
     },
     validateToken: async (token: string) => {
-        // try {
-        //     const response = await store.post(`${endpointUser}/validateToken`, {
-        //         token
-        //     });
-        //     return response.data;
-        // } catch (error) {
-        //     console.error(error);
-        //     throw error;
-        // }
-        return {
-            user: {
-                id: 1,
-                name: 'Max',
-                email: 'bruno@gmail.com',
-                password: 'bruno123',
-                is_admin: false
-            }
+        try {
+            const response = await store.post(`${endpointUser}/validateToken`, {
+                token
+            });
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            throw error;
         }
     },
     logout: () => {
@@ -159,7 +150,18 @@ export const api = {
     },
     getSearchPost: async (search: string | undefined) => {
         try {
-            const response = await store.get(`${endpointPost}/search/${search}`);
+            const response = await store.post(`${endpointPost}/search`, {
+                search
+            });
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    },
+    downloadCsv: async (id: string | number | undefined) => {
+        try {
+            const response = await store.get(`${endpointPost}/downloadcsv/${id}`);
             return response.data;
         } catch (error) {
             console.error(error);
